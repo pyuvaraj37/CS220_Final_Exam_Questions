@@ -31,3 +31,9 @@ def Write(path_to_write, numVert, edges, x):
             elif i < j and x[i][j] == 1 and (i + 1, j + 1) in edges:
                 file.writelines("{} {}\n".format(i + 1, j + 1))
     file.close()
+
+def WriteSat(path_to_write, x):
+    file = open(path_to_write, 'w')
+    for i in x:
+        file.writelines("{} {}\n".format(i[0], i[1]))
+    file.close()
